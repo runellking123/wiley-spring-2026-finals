@@ -787,11 +787,11 @@ const $ = s => document.querySelector(s);
 const $$ = s => document.querySelectorAll(s);
 const esc = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const buildingOf = room => {
-  if(/^BS/.test(room))return'Biology/Science (BS)';
-  if(/^TH/.test(room))return'Thomas Hall (TH)';
-  if(/^WC/.test(room))return'Willis Coleman (WC)';
-  if(/^SB/.test(room))return'Biology/Science (BS)';
-  if(/COLE/i.test(room))return'Coleman (COLE)';
+  if(/^BS/.test(room))return'Baker Science (BS)';
+  if(/^SB/.test(room))return'Baker Science (SB)';
+  if(/^TH/.test(room))return'Thirkield Hall (TH)';
+  if(/^WC/.test(room))return'Pemberton (WC)';
+  if(/COLE/i.test(room))return'Cole Library (COLE)';
   if(/Alumni/i.test(room))return'Alumni Gym';
   return room;
 };
@@ -1130,12 +1130,11 @@ function loadFromHash(){
 
 // =============== BUILDING LEGEND ===============
 const BUILDINGS = [
-  {code:'BS', name:'Biology / Science Building', note:'Science labs, lecture halls', rooms:['BS-101','BS-127','BS-131','BS-134','BS-204','BS-236','BS-239']},
-  {code:'TH', name:'Thomas Hall', note:'Education, humanities, languages', rooms:['TH-101','TH-102','TH-106/110','TH-120','TH-121','TH-305','TH-307','TH-312','TH-313','TH-314']},
-  {code:'WC', name:'Willis Coleman Classroom Building', note:'Criminal justice, sociology, music theory', rooms:['WC-117','WC-123','WC-140','WC-142','WC-148']},
-  {code:'COLE', name:'Coleman (T. W. Cole) Library / Lecture', note:'Upstairs & downstairs lecture areas', rooms:['COLE Upstairs','COLE Downstairs']},
-  {code:'SB', name:'Science Building', note:'Secondary science classroom', rooms:['SB-134']},
-  {code:'Alumni Gym', name:'Alumni Gymnasium', note:'Physical education / fitness courses', rooms:['Alumni Gym']},
+  {code:'BS / SB', name:'Baker Science Building', note:'Science labs, math, chemistry, biology, physics', rooms:['BS-101','BS-127','BS-131','BS-134','BS-204','BS-236','BS-239','SB-134']},
+  {code:'TH', name:'Thirkield Hall', note:'Education, humanities, languages, communications', rooms:['TH-101','TH-102','TH-106/110','TH-120','TH-121','TH-305','TH-307','TH-312','TH-313','TH-314']},
+  {code:'WC', name:'Pemberton', note:'Criminal justice, sociology, music theory', rooms:['WC-117','WC-123','WC-140','WC-142','WC-148']},
+  {code:'COLE', name:'Cole Library', note:'Upstairs & downstairs lecture areas', rooms:['COLE Upstairs','COLE Downstairs','COLE']},
+  {code:'Alumni Gym', name:'Alumni Gymnasium', note:'Physical education and fitness courses', rooms:['Alumni Gym']},
 ];
 function openBuildings(){
   const q = STATE.search;

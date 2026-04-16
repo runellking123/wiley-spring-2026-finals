@@ -1020,7 +1020,7 @@ function openModal(id){
         <div class="modal-detail"><div class="modal-detail-label">Time</div><div class="modal-detail-val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${e.t}</div></div>
         <div class="modal-detail"><div class="modal-detail-label">Instructor</div><div class="modal-detail-val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>${e.inst}</div></div>
         <div class="modal-detail"><div class="modal-detail-label">Location</div><div class="modal-detail-val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>${e.room}</div></div>
-        <div class="modal-detail" style="grid-column:1/-1"><div class="modal-detail-label">Building</div><div class="modal-detail-val">${buildingOf(e.room)}</div></div>
+        <div class="modal-detail" style="grid-column:1/-1"><div class="modal-detail-label">Building</div><div class="modal-detail-val">${buildingOf(e.room).replace(/\([^)]+\)$/,'').trim()} — Room ${e.room}</div></div>
       </div>
       <div class="modal-actions">
         <button class="modal-btn primary" data-modal-pin="${id}">
